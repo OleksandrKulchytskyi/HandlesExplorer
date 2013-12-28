@@ -69,9 +69,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Extension\ListBoxBehavior.cs" />
     <Compile Include="Models\IFileData.cs" />
     <Compile Include="Models\IProcess.cs" />
     <Compile Include="Models\ProcessModel.cs" />
+    <Compile Include="RelayCommand.cs" />
     <Compile Include="Services\DetectOpenFiles.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />

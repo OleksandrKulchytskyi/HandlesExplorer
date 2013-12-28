@@ -2,6 +2,7 @@ using GalaSoft.MvvmLight;
 using HandlesExplorer.Models;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Input;
 
 namespace HandlesExplorer.ViewModel
 {
@@ -35,6 +36,7 @@ namespace HandlesExplorer.ViewModel
 
 			Processes = new ObservableCollection<IProcess>(System.Diagnostics.Process.GetProcesses().Select(x => new ProcessModel(x)));
 			Files = new ObservableCollection<IFileData>();
+			FocusStateChanged = new RelayCommand(HandleFocusChangeEvent);
 		}
 
 		private IProcess selected;
@@ -82,6 +84,14 @@ namespace HandlesExplorer.ViewModel
 				files = value;
 				this.RaisePropertyChanged(() => Files);
 			}
+		}
+
+		public ICommand FocusStateChanged
+		{ get; set; }
+
+		private void HandleFocusChangeEvent(object obj)
+		{
+			
 		}
 	}
 }
